@@ -1,8 +1,6 @@
 # Agent Guide
 
-## Purpose
-
-This repository is for a context-aware surf lifesaving analysis system. Agents working here should prefer changes that preserve methodological clarity, explicit uncertainty, and readable project documentation.
+This file is for AI agents working in this repository. Use [`README.md`](/Users/bonj/Developer/Elm/sls-data-analysis/README.md) for project overview and document entry points.
 
 ## Project-Local Skills
 
@@ -20,12 +18,6 @@ This repository is for a context-aware surf lifesaving analysis system. Agents w
 - Call out unrelated working tree changes rather than silently folding them into a commit summary.
 - Prefer short imperative commit messages with prefixes such as `Fix:`, `Feature:`, `Documentation:`, `Refactor:`, `Style:`, or `Chore:`.
 
-## Documentation Map
-
-- Primary requirements live in [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md).
-- Open decisions and follow-up items live in [`docs/decision-queue.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/decision-queue.md).
-- When changing requirements, update affected assumptions, risks, outputs, and open questions instead of appending isolated notes.
-
 ## Domain and Writing Expectations
 
 - Keep confirmed requirements separate from provisional ideas and open questions.
@@ -33,6 +25,7 @@ This repository is for a context-aware surf lifesaving analysis system. Agents w
 - Prefer explainable, reviewable methods over opaque optimisation.
 - When adding or modifying analytical logic, keep method traceability explicit in code-adjacent docs or requirements notes.
 - Preserve fairness language: the project is intended for context-aware comparison, not raw ranking by default.
+- When changing requirements, update affected assumptions, risks, outputs, and open questions instead of appending isolated notes.
 
 ## Working Style
 
