@@ -18,17 +18,17 @@ The project aims to support fair, context-aware comparison across surf lifesavin
 
 ## Repository Map
 
-- [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md): living requirements document and methodology framing
-- [`docs/decision-queue.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/decision-queue.md): unresolved decisions that affect scope, modelling, and implementation order
-- [`AGENTS.md`](/Users/bonj/Developer/Elm/sls-data-analysis/AGENTS.md): repository-specific instructions for AI agents
+- [`docs/requirements.md`](docs/requirements.md): living requirements document and methodology framing
+- [`docs/decision-queue.md`](docs/decision-queue.md): unresolved decisions that affect scope, modelling, and implementation order
+- [`AGENTS.md`](AGENTS.md): repository-specific instructions for AI agents
 
 ## How To Read This Repo
 
 If you are new to the project:
 
-1. Start with [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md) to understand the intended system and current assumptions.
-2. Read [`docs/decision-queue.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/decision-queue.md) to see which unresolved questions still shape the design.
-3. If you are an AI agent making repo changes, then read [`AGENTS.md`](/Users/bonj/Developer/Elm/sls-data-analysis/AGENTS.md).
+1. Start with [`docs/requirements.md`](docs/requirements.md) to understand the intended system and current assumptions.
+2. Read [`docs/decision-queue.md`](docs/decision-queue.md) to see which unresolved questions still shape the design.
+3. If you are an AI agent making repo changes, then read [`AGENTS.md`](AGENTS.md).
 
 ## Current Scope Boundaries
 

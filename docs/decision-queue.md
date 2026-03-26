@@ -11,7 +11,7 @@ Use it to:
 
 ## How To Use
 - Move decisions from `Open` to `Decided` once settled.
-- Update [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md) when a decision is made.
+- Update [`docs/requirements.md`](requirements.md) when a decision is made.
 - Prefer resolving higher-priority items first because they unlock downstream design choices.
 
 ## Open
