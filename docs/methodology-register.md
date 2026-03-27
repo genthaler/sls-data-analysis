@@ -22,7 +22,7 @@ This file complements [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-dat
 
 | ID | Analytical Component | Method Family | Variant / Simplification | Status | Outputs Affected | References | Notes |
 |---|---|---|---|---|---|---|---|
-| M001 | Coverage and entity normalization | Rule-based normalization | Project-specific normalization with provenance mapping and reconciliation states | Active | Club/service inventory, completeness reporting, Phase 1 reference baseline | [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md), [`docs/phase-1-system-design.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/phase-1-system-design.md) | Phase 1 method; rules must remain explicit and reviewable |
+| M001 | Coverage and entity normalization | Rule-based normalization | Project-specific normalization with provenance mapping | Planned | Club/service inventory, completeness reporting | [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md) | Not a canonical statistical method; document rules explicitly |
 | M002 | Catchment accessibility | Floating catchment area methods | 2SFCA-family method, exact variant TBD | Candidate | Catchment view, overlap analysis, opportunity model | [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md) | Preferred methodological family for overlapping catchments |
 | M003 | Club choice among alternatives | Spatial interaction / choice modelling | Gravity or destination-choice model, TBD | Candidate | Club choice interpretation, overlap weighting | [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md) | Only needed if behavioural choice modelling is pursued |
 | M004 | Contextual benchmarking | Multilevel / hierarchical modelling | Exact specification TBD | Candidate | Expected-vs-actual comparison, fair benchmarking | [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md) | Preferred initial family for fair comparison |
@@ -52,26 +52,8 @@ Copy this block when a method moves beyond a simple register row.
 - Code location:
 - Review notes:
 
-### Method ID
-- Status: Active
-- Analytical component: Coverage and entity normalization
-- Method family: Rule-based normalization
-- Variant / simplification: Project-specific canonicalization, aliasing, provenance mapping, and explicit reconciliation states for asserted versus discovered entities
-- Phase introduced: Phase 1
-- Outputs affected: Reference directory snapshot, Beachsafe normalization outputs, coverage reconciliation report, service inventory
-- Why chosen: Phase 1 requires a descriptive and auditable baseline before any statistical modelling. Rule-based normalization is the simplest defensible method for preserving traceability while exposing ambiguity.
-- Inputs required: Asserted directories, Beachsafe raw records, discovered-link graph, manual alias/review inputs where needed
-- Assumptions: Source records contain enough structure for deterministic extraction; some mappings will remain unresolved and should be reported rather than forced
-- Limitations: Sensitive to source naming inconsistencies; does not estimate missing entities statistically; requires review workflow for ambiguous cases
-- Alternatives considered: Early probabilistic entity resolution was rejected for Phase 1 because it would reduce interpretability and make completeness reporting harder to defend
-- Principal references: [`docs/requirements.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/requirements.md), [`docs/phase-1-system-design.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/phase-1-system-design.md)
-- Design document: [`docs/phase-1-system-design.md`](/Users/bonj/Developer/Elm/sls-data-analysis/docs/phase-1-system-design.md)
-- Code location: Not yet implemented
-- Review notes: Keep normalization rules explicit, preserve raw values, and maintain observed/inferred/unavailable status semantics
-
 ## Review Notes
-- `M001` is now active for the Phase 1 baseline design. Statistical methods remain unimplemented and should not be implied by Phase 1 outputs.
+- No methods have been marked `Active` yet.
 
 ## Change Log
-- 2026-03-26: Created initial methodology register.
-- 2026-03-26: Marked `M001` active and linked it to the Phase 1 system design.
+- 2026-03-27: Restored methodology register to the repository.
