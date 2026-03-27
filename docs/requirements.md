@@ -19,6 +19,7 @@ Build a context-aware analysis system for surf lifesaving clubs, branches, and r
 - The system shall support patrol/service inventory, catchment analysis, travel analysis, visitation analysis, incident analysis, and map overlays.
 - The system shall consider all club members as the base member population when member analysis is in scope.
 - The system shall support progressive reporting under incomplete data.
+- The system shall maintain data ownership, permission, and privacy controls for all datasets used in the project.
 
 ### Provisional
 - The system should estimate growth opportunity using both structural factors and variable effort-related factors.
@@ -37,6 +38,7 @@ Build a context-aware analysis system for surf lifesaving clubs, branches, and r
 - Interpretability: The first implementation should favour explainable comparisons and defensible assumptions over opaque optimisation.
 - Incomplete-data handling: The system shall report the strongest defensible outputs possible from current data while identifying missing inputs and limits on comparison validity.
 - Method traceability: The system shall record which methodology or modelling family has been applied to each material analytical output, with references to source documents or literature where appropriate.
+- Data governance: Every dataset shall be attributable to an owner, documented with permission or usage basis for this project, and handled in a way that avoids storing private or personally identifiable information.
 
 ## Related Work
 - Surf Life Saving Australia's Beachsafe platform provides national beach coverage and exposes patrol status, hazards, facilities, and related beach/service information, making it a plausible backbone for national service-location discovery and patrol/service context. Source: [Beachsafe About](https://api.beachsafe.org.au/about), [Beachsafe App](https://beachsafe.org.au/apps).
@@ -120,6 +122,11 @@ Build a context-aware analysis system for surf lifesaving clubs, branches, and r
   - The system shall distinguish observed data, inferred data, and unavailable data in outputs.
   - The system shall indicate whether comparisons are valid, provisional, or not yet comparable.
   - The system shall support both peer-group comparison and expected-versus-actual comparison.
+  - The system shall maintain a register of datasets, data owners, permission status, and usage constraints.
+  - The system shall record the legal, contractual, or policy basis on which each dataset is used.
+  - The system shall identify datasets that are public, permissioned, restricted, or commercial-in-confidence.
+  - The system shall avoid storing private or personally identifiable information.
+  - The system shall use de-identified, aggregated, or otherwise privacy-preserving representations wherever member-linked analysis is required.
 - `Provisional`
   - The system should support member travel-distance and travel-time analysis once member home-location data is available.
   - The system should estimate overlapping club catchments using travel-based accessibility rather than simple fixed-radius geography.
@@ -135,6 +142,8 @@ Build a context-aware analysis system for surf lifesaving clubs, branches, and r
   - The system shall not treat missing data as zero or absence.
   - The system shall be extensible to new datasets over time.
   - The project shall maintain traceability between analytical outputs, implemented methods, and their documented methodological basis.
+  - The project shall maintain traceability between each dataset, its owner, its permission status, and any usage restrictions.
+  - The project shall be designed to minimize privacy risk and exclude unnecessary personal data from storage and reporting.
 - `Provisional`
   - The system should support national-scale application with staged maturity by geography.
   - The system should preserve enough auditability to explain how each normalized entity and comparison was derived.
@@ -159,6 +168,33 @@ Build a context-aware analysis system for surf lifesaving clubs, branches, and r
 | Visitation datasets | Historical and projected beach visitation, preferably by period/hour | Proposed | Source and coverage not yet confirmed |
 | Incident datasets | Rescue and fatality incidents | Proposed | Source and temporal granularity not yet confirmed |
 | Alternative activity / commitment datasets | Competing options for volunteer time | Proposed | Methodology must be fair and broadly applicable |
+
+## Data Ownership, Permission, and Privacy
+- Every dataset used by the project shall have an identifiable owner or steward.
+- The project shall maintain a dataset register that records for each dataset:
+  - dataset name
+  - owner or steward
+  - acquisition source
+  - permission or license basis
+  - usage restrictions
+  - confidentiality classification
+  - whether the dataset contains, could contain, or has been derived from personal information
+- Datasets should be classified at minimum as:
+  - public
+  - permissioned
+  - restricted
+  - commercial-in-confidence
+- Restricted or commercial-in-confidence datasets shall have explicit documentation of permission to use them for this project and any limits on storage, transformation, sharing, publication, or retention.
+- Public availability shall not be assumed to imply unrestricted reuse. Where public data has terms of use or attribution requirements, those shall be recorded and respected.
+- The project shall avoid storing private or personally identifiable information.
+- Where analysis requires member-linked data, the preferred approach shall be to use:
+  - aggregation
+  - de-identification
+  - pseudonymisation only if aggregation is not sufficient
+- Home-location analysis shall be designed to avoid retaining exact personal addresses if a coarser geography or derived distance/travel measure is sufficient.
+- Outputs and visualisations shall not expose personal information or permit easy re-identification through overly granular reporting.
+- Data ingestion and transformation steps should preserve enough provenance to show which derived outputs depend on which source datasets and permission basis.
+- If a valid permission basis for a dataset is unknown, that dataset should not be treated as approved for project use.
 
 ## Outputs
 
@@ -210,6 +246,9 @@ Build a context-aware analysis system for surf lifesaving clubs, branches, and r
 - Risk: Rescue Services asset and personnel data may have incomplete home-club attribution, limiting fair cross-service reporting.
 - Risk: Alternative-activity data may be difficult to source consistently without introducing coverage bias.
 - Risk: Overly complex modelling could reduce interpretability and trust.
+- Risk: Publicly accessible datasets may still carry terms-of-use restrictions that limit scraping, storage, redistribution, or publication.
+- Risk: Commercial-in-confidence or restricted datasets may impose constraints on analysis outputs, documentation, or reproducibility.
+- Risk: Member-linked data could create privacy or re-identification risk if stored or reported at excessive granularity.
 
 ## Open Questions
 - What is the primary growth target: all members, active members, qualified members, patrol capability, or patrol hours?
@@ -222,6 +261,8 @@ Build a context-aware analysis system for surf lifesaving clubs, branches, and r
 - Is there any historical recruitment-effort data that can help distinguish effort from structural context?
 - What club-level capability or qualification data is available reliably enough for fair comparison?
 - What authoritative source will provide Rescue Services asset/personnel data and how complete will home-club attribution be?
+- What privacy-safe member-location representation is sufficient for travel and catchment analysis?
+- What dataset register format should be used to track ownership, permissions, confidentiality, and privacy status?
 
 ## Decision Log
 - 2026-03-26: The living requirements specification will be maintained as Markdown in the repository rather than as a separate formal governance document.
@@ -230,6 +271,7 @@ Build a context-aware analysis system for surf lifesaving clubs, branches, and r
 - 2026-03-26: The default git branch for the repository was changed from `master` to `main`.
 - 2026-03-26: Cross-service reporting shall include branch Rescue Services assets and personnel, with home-club attribution where known.
 - 2026-03-26: Methodology usage shall be traceable in design documentation and, where relevant, code-adjacent documentation.
+- 2026-03-27: Data ownership, permission status, confidentiality classification, and privacy controls shall be treated as core project requirements.
 
 ## Change Log
 - 2026-03-26: Created initial provisional requirements document from elicitation notes and provisional formal specification.
