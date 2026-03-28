@@ -7,7 +7,6 @@ This file is for AI agents working in this repository. Use [`README.md`](README.
 - Project-local skills live under [`.agents/skills`](.agents/skills).
 - Check that folder before inventing repo-specific workflows.
 - Current local skills include:
-  - [`.agents/skills/git/SKILL.md`](.agents/skills/git/SKILL.md) for git status, branch, and commit-message guidance.
   - [`.agents/skills/requirements-document/SKILL.md`](.agents/skills/requirements-document/SKILL.md) for maintaining the living requirements document.
 
 ## Git Rules
